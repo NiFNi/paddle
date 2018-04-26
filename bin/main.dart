@@ -38,7 +38,7 @@ Future<int> main(List<String> arguments) async {
   /// in some circumstances the broker will just disconnect us, see the spec about this, we however eill
   /// never send malformed messages.
   try {
-    await client.connect("paddle", "muhkuh123");
+    await client.connect("paddle", "pw");
   } catch (e) {
     /// Error handling.....
     print(e);
