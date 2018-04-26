@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:observable/observable.dart';
 
 Future<int> main(List<String> arguments) async {
-  final MqttClient client = new MqttClient("localhost", "paddle");
+  final MqttClient client = new MqttClient("ws://nano.nifni.net/mqtt", "paddle");
 
   /// A websocket URL must start with ws:// or Dart will throw an exception, consult your websocket MQTT broker
   /// for details.
@@ -31,7 +31,7 @@ Future<int> main(List<String> arguments) async {
       .withClientIdentifier("paddle")
       .keepAliveFor(30) // Must agree with the keep alive set above
       .withWillTopic("sharedconfig")
-      .authenticateAs("paddle", "muhkuh123");
+      .authenticateAs("paddle", "pw");
   client.connectionMessage = connMess;
 
   /// Connect the client, any errors here are communicated by raising of the appropriate exception. Note
